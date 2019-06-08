@@ -50,6 +50,10 @@ config_sdram_f=$(($(/opt/vc/bin/vcgencmd get_config sdram_freq | sed -e "s/sdram
 
 arm_m=$(($(/opt/vc/bin/vcgencmd get_mem arm | sed -e "s/arm=//" -e "s/M//")*1000000))
 gpu_m=$(($(/opt/vc/bin/vcgencmd get_mem gpu | sed -e "s/gpu=//" -e "s/M//")*1000000))
+malloc_total_m=$(($(/opt/vc/bin/vcgencmd get_mem malloc_total | sed -e "s/malloc_total=//" -e "s/M//")*1000000))
+malloc_m=$(($(/opt/vc/bin/vcgencmd get_mem malloc | sed -e "s/malloc=//" -e "s/M//")*1000000))
+reloc_total_m=$(($(/opt/vc/bin/vcgencmd get_mem reloc_total | sed -e "s/reloc_total=//" -e "s/M//")*1000000))
+reloc_m=$(($(/opt/vc/bin/vcgencmd get_mem reloc | sed -e "s/reloc=//" -e "s/M//")*1000000))
 
 oom_c=$(/opt/vc/bin/vcgencmd mem_oom | grep "oom events" | sed -e "s/^.*: //")
 oom_t=$(/opt/vc/bin/vcgencmd mem_oom | grep "total time" | sed -e "s/^.*: //" -e "s/ ms//")
@@ -59,4 +63,4 @@ mem_reloc_compact_c=$(/opt/vc/bin/vcgencmd mem_reloc_stats | grep "compactions" 
 mem_reloc_leg_blk_fail_c=$(/opt/vc/bin/vcgencmd mem_reloc_stats | grep "legacy block fails" | sed -e "s/^.*:[^0-9]*//")
 
 #echo "raspberry_pi,host=${rpi} cpu_temp=$((cpu_t/1000)).$((cpu_t%1000)),cpu_freq=$((cpu_f*1000))i,gpu_temp=${gpu_t} ${ts}"
-echo "raspberry_pi,host=${rpi} soc_temp=${soc_t},arm_freq=${arm_f}i,core_freq=${core_f}i,h264_freq=${h264_f}i,isp_freq=${isp_f}i,v3d_freq=${v3d_f}i,uart_freq=${uart_f}i,pwm_freq=${pwm_f}i,emmc_freq=${emmc_f}i,pixel_freq=${pixel_f}i,vec_freq=${vec_f}i,hdmi_freq=${hdmi_f}i,dpi_freq=${dpi_f}i,core_volts=${core_v},sdram_c_volts=${sdram_c_v},sdram_i_volts=${sdram_i_v},sdram_p_volts=${sdram_p_v},config_arm_freq=${config_arm_f}i,config_core_freq=${config_core_f}i,config_gpu_freq=${config_gpu_f}i,config_sdram_freq=${config_sdram_f}i,arm_mem=${arm_m}i,gpu_mem=${gpu_m}i,oom_count=${oom_c}i,oom_ms=${oom_t}i,mem_reloc_allocation_failures=${mem_reloc_alloc_fail_c}i,mem_reloc_compactions=${mem_reloc_compact_c}i,mem_reloc_legacy_block_failures=${mem_reloc_leg_blk_fail_c}i"
+echo "raspberry_pi,host=${rpi} soc_temp=${soc_t},arm_freq=${arm_f}i,core_freq=${core_f}i,h264_freq=${h264_f}i,isp_freq=${isp_f}i,v3d_freq=${v3d_f}i,uart_freq=${uart_f}i,pwm_freq=${pwm_f}i,emmc_freq=${emmc_f}i,pixel_freq=${pixel_f}i,vec_freq=${vec_f}i,hdmi_freq=${hdmi_f}i,dpi_freq=${dpi_f}i,core_volts=${core_v},sdram_c_volts=${sdram_c_v},sdram_i_volts=${sdram_i_v},sdram_p_volts=${sdram_p_v},config_arm_freq=${config_arm_f}i,config_core_freq=${config_core_f}i,config_gpu_freq=${config_gpu_f}i,config_sdram_freq=${config_sdram_f}i,arm_mem=${arm_m}i,gpu_mem=${gpu_m}i,malloc_total_mem=${malloc_total_m}i,malloc_mem=${malloc_m}i,reloc_total_mem=${reloc_total_m}i,reloc_mem=${reloc_m}i,oom_count=${oom_c}i,oom_ms=${oom_t}i,mem_reloc_allocation_failures=${mem_reloc_alloc_fail_c}i,mem_reloc_compactions=${mem_reloc_compact_c}i,mem_reloc_legacy_block_failures=${mem_reloc_leg_blk_fail_c}i"
