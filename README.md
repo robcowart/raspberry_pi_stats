@@ -2,7 +2,7 @@
 
 A script to collect various Raspberry Pi statistics, which are sent via Telegraf to InfluxDB.
 
-![Raspberry Pi: Health](https://user-images.githubusercontent.com/10326954/59144161-b50acf00-89d3-11e9-8b8e-988b6dc7c730.png)
+![raspberry_pi_stats_github_social](https://user-images.githubusercontent.com/10326954/59145214-fce42300-89e0-11e9-9de4-f5b3e2cd4507.png)
 
 ## Collecting Raspberry Pi Statistics
 
@@ -31,6 +31,8 @@ After Telegraf is started, data will be sent to InfluxDB.
 ## Import the Dashboard
 
 A Raspberry Pi Health dashboard for Chronograf is provided in the file `Raspberry_Pi_Health.json`. This can be imported from Chronograf's Dashboards list.
+
+![Raspberry Pi: Health](https://user-images.githubusercontent.com/10326954/59144161-b50acf00-89d3-11e9-8b8e-988b6dc7c730.png)
 
 ## Collected Statistics
 
