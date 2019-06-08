@@ -8,6 +8,8 @@ A script to collect various Raspberry Pi statistics, which are sent via Telegraf
 
 The provided `rpi-stats.sh` script collects statistics using Raspbian's `vcgencmd` command. These values are parsed from the command's output and formatted in InfluxDB's [line protocol](https://docs.influxdata.com/influxdb/v1.7/write_protocols/line_protocol_tutorial/) for easy collection via Telegraf's [exec](https://github.com/influxdata/telegraf/tree/master/plugins/inputs/exec) input.
 
+> To learn how to install Telegraf (and the rest of the TICK Stack) on the Raspberry Pi, refer to this [blog](https://www.influxdata.com/blog/running-the-tick-stack-on-a-raspberry-pi/).
+
 Copy the script to the directory from which you wish to run it (I usually put it in `/usr/local/bin`), and ensure that it can be executed by the user under which Telegraf will be run (the default user is `telegraf`). The user will need to have `sudo` rights.
 
 Configure the Telegraf [exec](https://github.com/influxdata/telegraf/tree/master/plugins/inputs/exec) input to execute the script. For example...
