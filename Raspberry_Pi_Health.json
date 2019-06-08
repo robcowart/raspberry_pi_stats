@@ -1,0 +1,2040 @@
+{
+	"meta": {
+		"chronografVersion": "1.7.10",
+		"sources": {
+			"0": {
+				"name": "http://192.2.0.1:8086",
+				"link": "/chronograf/v1/sources/0"
+			}
+		}
+	},
+	"dashboard": {
+		"id": 58,
+		"cells": [
+			{
+				"i": "17b21dbc-416a-4d17-bfeb-2051c6ec4fba",
+				"x": 6,
+				"y": 7,
+				"w": 6,
+				"h": 3,
+				"name": "Memory Errors - :host:",
+				"queries": [
+					{
+						"query": "SELECT non_negative_difference(last(\"mem_reloc_allocation_failures\")) AS \"Memory Allocation Failures\", non_negative_difference(last(\"mem_reloc_compactions\")) AS \"Memory Compactions\", non_negative_difference(last(\"mem_reloc_legacy_block_failures\")) AS \"Memory Legacy Block Failures\", non_negative_difference(last(\"oom_count\")) AS \"Out-of-Memory Errors\" FROM \"telegraf\"..\"raspberry_pi\" WHERE time > :dashboardTime: AND \"host\"=':host:' GROUP BY time(:interval:) FILL(null)",
+						"queryConfig": {
+							"database": "",
+							"measurement": "",
+							"retentionPolicy": "",
+							"fields": [],
+							"tags": {},
+							"groupBy": {
+								"time": "",
+								"tags": []
+							},
+							"areTagsAccepted": false,
+							"rawText": "SELECT non_negative_difference(last(\"mem_reloc_allocation_failures\")) AS \"Memory Allocation Failures\", non_negative_difference(last(\"mem_reloc_compactions\")) AS \"Memory Compactions\", non_negative_difference(last(\"mem_reloc_legacy_block_failures\")) AS \"Memory Legacy Block Failures\", non_negative_difference(last(\"oom_count\")) AS \"Out-of-Memory Errors\" FROM \"telegraf\"..\"raspberry_pi\" WHERE time > :dashboardTime: AND \"host\"=':host:' GROUP BY time(:interval:) FILL(null)",
+							"range": null,
+							"shifts": null
+						},
+						"source": "",
+						"type": "influxql"
+					}
+				],
+				"axes": {
+					"x": {
+						"bounds": [
+							"",
+							""
+						],
+						"label": "",
+						"prefix": "",
+						"suffix": "",
+						"base": "10",
+						"scale": "linear"
+					},
+					"y": {
+						"bounds": [
+							"0",
+							""
+						],
+						"label": "errors",
+						"prefix": "",
+						"suffix": "",
+						"base": "10",
+						"scale": "linear"
+					},
+					"y2": {
+						"bounds": [
+							"",
+							""
+						],
+						"label": "",
+						"prefix": "",
+						"suffix": "",
+						"base": "10",
+						"scale": "linear"
+					}
+				},
+				"type": "line",
+				"colors": [
+					{
+						"id": "913bc2a2-9b17-4dde-b815-d25ab60e6074",
+						"type": "scale",
+						"hex": "#31C0F6",
+						"name": "Nineteen Eighty Four",
+						"value": "0"
+					},
+					{
+						"id": "4d5af615-6922-417a-9dcd-068567d1382d",
+						"type": "scale",
+						"hex": "#A500A5",
+						"name": "Nineteen Eighty Four",
+						"value": "0"
+					},
+					{
+						"id": "057442e2-7f4a-4ecf-b96e-9085c3110a2e",
+						"type": "scale",
+						"hex": "#FF7E27",
+						"name": "Nineteen Eighty Four",
+						"value": "0"
+					}
+				],
+				"legend": {},
+				"tableOptions": {
+					"verticalTimeAxis": true,
+					"sortBy": {
+						"internalName": "time",
+						"displayName": "",
+						"visible": true
+					},
+					"wrapping": "truncate",
+					"fixFirstColumn": true
+				},
+				"fieldOptions": [
+					{
+						"internalName": "time",
+						"displayName": "",
+						"visible": true
+					}
+				],
+				"timeFormat": "MM/DD/YYYY HH:mm:ss",
+				"decimalPlaces": {
+					"isEnforced": true,
+					"digits": 2
+				},
+				"note": "",
+				"noteVisibility": "default",
+				"links": {
+					"self": "/chronograf/v1/dashboards/58/cells/17b21dbc-416a-4d17-bfeb-2051c6ec4fba"
+				}
+			},
+			{
+				"i": "0ce7be7f-26ea-4ae1-81df-7327757fac1a",
+				"x": 10,
+				"y": 1,
+				"w": 2,
+				"h": 3,
+				"name": "SDRAM Physical Volts - :host:",
+				"queries": [
+					{
+						"query": "SELECT last(\"sdram_p_volts\") FROM \"telegraf\"..\"raspberry_pi\" WHERE time > :dashboardTime: AND \"host\"=':host:'",
+						"queryConfig": {
+							"database": "telegraf",
+							"measurement": "raspberry_pi",
+							"retentionPolicy": "",
+							"fields": [
+								{
+									"value": "last",
+									"type": "func",
+									"alias": "",
+									"args": [
+										{
+											"value": "sdram_p_volts",
+											"type": "field",
+											"alias": ""
+										}
+									]
+								}
+							],
+							"tags": {
+								"host": [
+									":host:"
+								]
+							},
+							"groupBy": {
+								"time": "",
+								"tags": []
+							},
+							"areTagsAccepted": true,
+							"rawText": null,
+							"range": null,
+							"shifts": null
+						},
+						"source": "",
+						"type": "influxql"
+					}
+				],
+				"axes": {
+					"x": {
+						"bounds": [
+							"",
+							""
+						],
+						"label": "",
+						"prefix": "",
+						"suffix": "",
+						"base": "10",
+						"scale": "linear"
+					},
+					"y": {
+						"bounds": [
+							"",
+							""
+						],
+						"label": "frequency",
+						"prefix": "",
+						"suffix": " V",
+						"base": "10",
+						"scale": "linear"
+					},
+					"y2": {
+						"bounds": [
+							"",
+							""
+						],
+						"label": "",
+						"prefix": "",
+						"suffix": "",
+						"base": "10",
+						"scale": "linear"
+					}
+				},
+				"type": "gauge",
+				"colors": [
+					{
+						"id": "0",
+						"type": "min",
+						"hex": "#DC4E58",
+						"name": "fire",
+						"value": "0"
+					},
+					{
+						"id": "4f679c99-31dd-449e-badc-726f8b7f88cc",
+						"type": "threshold",
+						"hex": "#32B08C",
+						"name": "viridian",
+						"value": "1.15"
+					},
+					{
+						"id": "acf257b9-c195-44ca-a869-8ec0d4692538",
+						"type": "threshold",
+						"hex": "#DC4E58",
+						"name": "fire",
+						"value": "1.35"
+					},
+					{
+						"id": "1",
+						"type": "max",
+						"hex": "#9394FF",
+						"name": "comet",
+						"value": "2.5"
+					}
+				],
+				"legend": {},
+				"tableOptions": {
+					"verticalTimeAxis": true,
+					"sortBy": {
+						"internalName": "time",
+						"displayName": "",
+						"visible": true
+					},
+					"wrapping": "truncate",
+					"fixFirstColumn": true
+				},
+				"fieldOptions": [
+					{
+						"internalName": "time",
+						"displayName": "",
+						"visible": true
+					}
+				],
+				"timeFormat": "MM/DD/YYYY HH:mm:ss",
+				"decimalPlaces": {
+					"isEnforced": true,
+					"digits": 2
+				},
+				"note": "",
+				"noteVisibility": "default",
+				"links": {
+					"self": "/chronograf/v1/dashboards/58/cells/0ce7be7f-26ea-4ae1-81df-7327757fac1a"
+				}
+			},
+			{
+				"i": "b52db455-2373-4ac3-ab9c-79f594b0aaef",
+				"x": 6,
+				"y": 4,
+				"w": 6,
+				"h": 3,
+				"name": "Voltages - :host:",
+				"queries": [
+					{
+						"query": "SELECT last(\"core_volts\") AS \"Core volts\", last(\"sdram_c_volts\") AS \"SDRAM Core volts\", last(\"sdram_i_volts\") AS \"SDRAM I/O volts\", last(\"sdram_p_volts\") AS \"SDRAM Physical volts\" FROM \"telegraf\"..\"raspberry_pi\" WHERE time > :dashboardTime: AND \"host\"=':host:' GROUP BY time(:interval:) FILL(null)",
+						"queryConfig": {
+							"database": "telegraf",
+							"measurement": "raspberry_pi",
+							"retentionPolicy": "",
+							"fields": [
+								{
+									"value": "last",
+									"type": "func",
+									"alias": "Core volts",
+									"args": [
+										{
+											"value": "core_volts",
+											"type": "field",
+											"alias": ""
+										}
+									]
+								},
+								{
+									"value": "last",
+									"type": "func",
+									"alias": "SDRAM Core volts",
+									"args": [
+										{
+											"value": "sdram_c_volts",
+											"type": "field",
+											"alias": ""
+										}
+									]
+								},
+								{
+									"value": "last",
+									"type": "func",
+									"alias": "SDRAM I/O volts",
+									"args": [
+										{
+											"value": "sdram_i_volts",
+											"type": "field",
+											"alias": ""
+										}
+									]
+								},
+								{
+									"value": "last",
+									"type": "func",
+									"alias": "SDRAM Physical volts",
+									"args": [
+										{
+											"value": "sdram_p_volts",
+											"type": "field",
+											"alias": ""
+										}
+									]
+								}
+							],
+							"tags": {
+								"host": [
+									":host:"
+								]
+							},
+							"groupBy": {
+								"time": "auto",
+								"tags": []
+							},
+							"areTagsAccepted": true,
+							"fill": "null",
+							"rawText": null,
+							"range": null,
+							"shifts": null
+						},
+						"source": "",
+						"type": "influxql"
+					}
+				],
+				"axes": {
+					"x": {
+						"bounds": [
+							"",
+							""
+						],
+						"label": "",
+						"prefix": "",
+						"suffix": "",
+						"base": "10",
+						"scale": "linear"
+					},
+					"y": {
+						"bounds": [
+							"0",
+							""
+						],
+						"label": "volts",
+						"prefix": "",
+						"suffix": " V",
+						"base": "raw",
+						"scale": "linear"
+					},
+					"y2": {
+						"bounds": [
+							"",
+							""
+						],
+						"label": "",
+						"prefix": "",
+						"suffix": "",
+						"base": "10",
+						"scale": "linear"
+					}
+				},
+				"type": "line",
+				"colors": [
+					{
+						"id": "13403e00-65aa-4ce8-a3a2-f344d54e4f73",
+						"type": "scale",
+						"hex": "#31C0F6",
+						"name": "Nineteen Eighty Four",
+						"value": "0"
+					},
+					{
+						"id": "81ad47af-47ae-462c-9006-999b3091eb0f",
+						"type": "scale",
+						"hex": "#A500A5",
+						"name": "Nineteen Eighty Four",
+						"value": "0"
+					},
+					{
+						"id": "034d6578-d13a-44e5-84ed-e941babfd2bf",
+						"type": "scale",
+						"hex": "#FF7E27",
+						"name": "Nineteen Eighty Four",
+						"value": "0"
+					}
+				],
+				"legend": {},
+				"tableOptions": {
+					"verticalTimeAxis": true,
+					"sortBy": {
+						"internalName": "time",
+						"displayName": "",
+						"visible": true
+					},
+					"wrapping": "truncate",
+					"fixFirstColumn": true
+				},
+				"fieldOptions": [
+					{
+						"internalName": "time",
+						"displayName": "",
+						"visible": true
+					}
+				],
+				"timeFormat": "MM/DD/YYYY HH:mm:ss",
+				"decimalPlaces": {
+					"isEnforced": true,
+					"digits": 2
+				},
+				"note": "",
+				"noteVisibility": "default",
+				"links": {
+					"self": "/chronograf/v1/dashboards/58/cells/b52db455-2373-4ac3-ab9c-79f594b0aaef"
+				}
+			},
+			{
+				"i": "8ec2f797-9e21-411b-80d3-79c74c700cd9",
+				"x": 8,
+				"y": 1,
+				"w": 2,
+				"h": 3,
+				"name": "SDRAM Core Volts - :host:",
+				"queries": [
+					{
+						"query": "SELECT last(\"sdram_c_volts\") FROM \"telegraf\"..\"raspberry_pi\" WHERE time > :dashboardTime: AND \"host\"=':host:'",
+						"queryConfig": {
+							"database": "telegraf",
+							"measurement": "raspberry_pi",
+							"retentionPolicy": "",
+							"fields": [
+								{
+									"value": "last",
+									"type": "func",
+									"alias": "",
+									"args": [
+										{
+											"value": "sdram_c_volts",
+											"type": "field",
+											"alias": ""
+										}
+									]
+								}
+							],
+							"tags": {
+								"host": [
+									":host:"
+								]
+							},
+							"groupBy": {
+								"time": "",
+								"tags": []
+							},
+							"areTagsAccepted": true,
+							"rawText": null,
+							"range": null,
+							"shifts": null
+						},
+						"source": "",
+						"type": "influxql"
+					}
+				],
+				"axes": {
+					"x": {
+						"bounds": [
+							"",
+							""
+						],
+						"label": "",
+						"prefix": "",
+						"suffix": "",
+						"base": "10",
+						"scale": "linear"
+					},
+					"y": {
+						"bounds": [
+							"",
+							""
+						],
+						"label": "frequency",
+						"prefix": "",
+						"suffix": " V",
+						"base": "10",
+						"scale": "linear"
+					},
+					"y2": {
+						"bounds": [
+							"",
+							""
+						],
+						"label": "",
+						"prefix": "",
+						"suffix": "",
+						"base": "10",
+						"scale": "linear"
+					}
+				},
+				"type": "gauge",
+				"colors": [
+					{
+						"id": "0",
+						"type": "min",
+						"hex": "#DC4E58",
+						"name": "fire",
+						"value": "0"
+					},
+					{
+						"id": "4f679c99-31dd-449e-badc-726f8b7f88cc",
+						"type": "threshold",
+						"hex": "#32B08C",
+						"name": "viridian",
+						"value": "1.15"
+					},
+					{
+						"id": "acf257b9-c195-44ca-a869-8ec0d4692538",
+						"type": "threshold",
+						"hex": "#DC4E58",
+						"name": "fire",
+						"value": "1.35"
+					},
+					{
+						"id": "1",
+						"type": "max",
+						"hex": "#9394FF",
+						"name": "comet",
+						"value": "2.5"
+					}
+				],
+				"legend": {},
+				"tableOptions": {
+					"verticalTimeAxis": true,
+					"sortBy": {
+						"internalName": "time",
+						"displayName": "",
+						"visible": true
+					},
+					"wrapping": "truncate",
+					"fixFirstColumn": true
+				},
+				"fieldOptions": [
+					{
+						"internalName": "time",
+						"displayName": "",
+						"visible": true
+					}
+				],
+				"timeFormat": "MM/DD/YYYY HH:mm:ss",
+				"decimalPlaces": {
+					"isEnforced": true,
+					"digits": 2
+				},
+				"note": "",
+				"noteVisibility": "default",
+				"links": {
+					"self": "/chronograf/v1/dashboards/58/cells/8ec2f797-9e21-411b-80d3-79c74c700cd9"
+				}
+			},
+			{
+				"i": "57442a45-2d73-4c6e-8cc7-e9f2beeba4a0",
+				"x": 6,
+				"y": 1,
+				"w": 2,
+				"h": 3,
+				"name": "Core Volts - :host:",
+				"queries": [
+					{
+						"query": "SELECT last(\"core_volts\") FROM \"telegraf\"..\"raspberry_pi\" WHERE time > :dashboardTime: AND \"host\"=':host:'",
+						"queryConfig": {
+							"database": "telegraf",
+							"measurement": "raspberry_pi",
+							"retentionPolicy": "",
+							"fields": [
+								{
+									"value": "last",
+									"type": "func",
+									"alias": "",
+									"args": [
+										{
+											"value": "core_volts",
+											"type": "field",
+											"alias": ""
+										}
+									]
+								}
+							],
+							"tags": {
+								"host": [
+									":host:"
+								]
+							},
+							"groupBy": {
+								"time": "",
+								"tags": []
+							},
+							"areTagsAccepted": true,
+							"rawText": null,
+							"range": null,
+							"shifts": null
+						},
+						"source": "",
+						"type": "influxql"
+					}
+				],
+				"axes": {
+					"x": {
+						"bounds": [
+							"",
+							""
+						],
+						"label": "",
+						"prefix": "",
+						"suffix": "",
+						"base": "10",
+						"scale": "linear"
+					},
+					"y": {
+						"bounds": [
+							"",
+							""
+						],
+						"label": "frequency",
+						"prefix": "",
+						"suffix": " V",
+						"base": "10",
+						"scale": "linear"
+					},
+					"y2": {
+						"bounds": [
+							"",
+							""
+						],
+						"label": "",
+						"prefix": "",
+						"suffix": "",
+						"base": "10",
+						"scale": "linear"
+					}
+				},
+				"type": "gauge",
+				"colors": [
+					{
+						"id": "0",
+						"type": "min",
+						"hex": "#DC4E58",
+						"name": "fire",
+						"value": "0"
+					},
+					{
+						"id": "4f679c99-31dd-449e-badc-726f8b7f88cc",
+						"type": "threshold",
+						"hex": "#32B08C",
+						"name": "viridian",
+						"value": "1.25"
+					},
+					{
+						"id": "acf257b9-c195-44ca-a869-8ec0d4692538",
+						"type": "threshold",
+						"hex": "#DC4E58",
+						"name": "fire",
+						"value": "1.45"
+					},
+					{
+						"id": "1",
+						"type": "max",
+						"hex": "#9394FF",
+						"name": "comet",
+						"value": "2.7"
+					}
+				],
+				"legend": {},
+				"tableOptions": {
+					"verticalTimeAxis": true,
+					"sortBy": {
+						"internalName": "time",
+						"displayName": "",
+						"visible": true
+					},
+					"wrapping": "truncate",
+					"fixFirstColumn": true
+				},
+				"fieldOptions": [
+					{
+						"internalName": "time",
+						"displayName": "",
+						"visible": true
+					}
+				],
+				"timeFormat": "MM/DD/YYYY HH:mm:ss",
+				"decimalPlaces": {
+					"isEnforced": true,
+					"digits": 2
+				},
+				"note": "",
+				"noteVisibility": "default",
+				"links": {
+					"self": "/chronograf/v1/dashboards/58/cells/57442a45-2d73-4c6e-8cc7-e9f2beeba4a0"
+				}
+			},
+			{
+				"i": "10f12766-45a3-4ec5-849d-5eec6d1f42a0",
+				"x": 2,
+				"y": 1,
+				"w": 2,
+				"h": 3,
+				"name": "Core Current Freq. - :host:",
+				"queries": [
+					{
+						"query": "SELECT last(\"core_freq\")/1000000 FROM \"telegraf\"..\"raspberry_pi\" WHERE time > :dashboardTime: AND \"host\"=':host:'",
+						"queryConfig": {
+							"database": "",
+							"measurement": "",
+							"retentionPolicy": "",
+							"fields": [],
+							"tags": {},
+							"groupBy": {
+								"time": "",
+								"tags": []
+							},
+							"areTagsAccepted": false,
+							"rawText": "SELECT last(\"core_freq\")/1000000 FROM \"telegraf\"..\"raspberry_pi\" WHERE time > :dashboardTime: AND \"host\"=':host:'",
+							"range": null,
+							"shifts": null
+						},
+						"source": "",
+						"type": "influxql"
+					}
+				],
+				"axes": {
+					"x": {
+						"bounds": [
+							"",
+							""
+						],
+						"label": "",
+						"prefix": "",
+						"suffix": "",
+						"base": "10",
+						"scale": "linear"
+					},
+					"y": {
+						"bounds": [
+							"",
+							""
+						],
+						"label": "frequency",
+						"prefix": "",
+						"suffix": " MHz",
+						"base": "10",
+						"scale": "linear"
+					},
+					"y2": {
+						"bounds": [
+							"",
+							""
+						],
+						"label": "",
+						"prefix": "",
+						"suffix": "",
+						"base": "10",
+						"scale": "linear"
+					}
+				},
+				"type": "gauge",
+				"colors": [
+					{
+						"id": "0",
+						"type": "min",
+						"hex": "#32B08C",
+						"name": "viridian",
+						"value": "0"
+					},
+					{
+						"id": "f93a1901-a6db-41e4-ad0d-954fdff2ff26",
+						"type": "threshold",
+						"hex": "#00C9FF",
+						"name": "laser",
+						"value": "350"
+					},
+					{
+						"id": "1",
+						"type": "max",
+						"hex": "#FFD255",
+						"name": "thunder",
+						"value": "400"
+					}
+				],
+				"legend": {},
+				"tableOptions": {
+					"verticalTimeAxis": true,
+					"sortBy": {
+						"internalName": "time",
+						"displayName": "",
+						"visible": true
+					},
+					"wrapping": "truncate",
+					"fixFirstColumn": true
+				},
+				"fieldOptions": [
+					{
+						"internalName": "time",
+						"displayName": "",
+						"visible": true
+					}
+				],
+				"timeFormat": "MM/DD/YYYY HH:mm:ss",
+				"decimalPlaces": {
+					"isEnforced": true,
+					"digits": 0
+				},
+				"note": "",
+				"noteVisibility": "default",
+				"links": {
+					"self": "/chronograf/v1/dashboards/58/cells/10f12766-45a3-4ec5-849d-5eec6d1f42a0"
+				}
+			},
+			{
+				"i": "9099eb5f-5a6c-4019-8c09-5fcd43a2c190",
+				"x": 0,
+				"y": 1,
+				"w": 2,
+				"h": 3,
+				"name": "ARM Current Freq. - :host:",
+				"queries": [
+					{
+						"query": "SELECT last(\"arm_freq\")/1000000 FROM \"telegraf\"..\"raspberry_pi\" WHERE time > :dashboardTime: AND \"host\"=':host:'",
+						"queryConfig": {
+							"database": "",
+							"measurement": "",
+							"retentionPolicy": "",
+							"fields": [],
+							"tags": {},
+							"groupBy": {
+								"time": "",
+								"tags": []
+							},
+							"areTagsAccepted": false,
+							"rawText": "SELECT last(\"arm_freq\")/1000000 FROM \"telegraf\"..\"raspberry_pi\" WHERE time > :dashboardTime: AND \"host\"=':host:'",
+							"range": null,
+							"shifts": null
+						},
+						"source": "",
+						"type": "influxql"
+					}
+				],
+				"axes": {
+					"x": {
+						"bounds": [
+							"",
+							""
+						],
+						"label": "",
+						"prefix": "",
+						"suffix": "",
+						"base": "10",
+						"scale": "linear"
+					},
+					"y": {
+						"bounds": [
+							"",
+							""
+						],
+						"label": "frequency",
+						"prefix": "",
+						"suffix": " MHz",
+						"base": "10",
+						"scale": "linear"
+					},
+					"y2": {
+						"bounds": [
+							"",
+							""
+						],
+						"label": "",
+						"prefix": "",
+						"suffix": "",
+						"base": "10",
+						"scale": "linear"
+					}
+				},
+				"type": "gauge",
+				"colors": [
+					{
+						"id": "0",
+						"type": "min",
+						"hex": "#32B08C",
+						"name": "viridian",
+						"value": "0"
+					},
+					{
+						"id": "f93a1901-a6db-41e4-ad0d-954fdff2ff26",
+						"type": "threshold",
+						"hex": "#00C9FF",
+						"name": "laser",
+						"value": "1200"
+					},
+					{
+						"id": "1",
+						"type": "max",
+						"hex": "#FFD255",
+						"name": "thunder",
+						"value": "1400"
+					}
+				],
+				"legend": {},
+				"tableOptions": {
+					"verticalTimeAxis": true,
+					"sortBy": {
+						"internalName": "time",
+						"displayName": "",
+						"visible": true
+					},
+					"wrapping": "truncate",
+					"fixFirstColumn": true
+				},
+				"fieldOptions": [
+					{
+						"internalName": "time",
+						"displayName": "",
+						"visible": true
+					}
+				],
+				"timeFormat": "MM/DD/YYYY HH:mm:ss",
+				"decimalPlaces": {
+					"isEnforced": true,
+					"digits": 0
+				},
+				"note": "",
+				"noteVisibility": "default",
+				"links": {
+					"self": "/chronograf/v1/dashboards/58/cells/9099eb5f-5a6c-4019-8c09-5fcd43a2c190"
+				}
+			},
+			{
+				"i": "f46b099d-f178-488d-9352-b3f48f8dce55",
+				"x": 10,
+				"y": 0,
+				"w": 2,
+				"h": 1,
+				"name": "GPU Memory - :host:",
+				"queries": [
+					{
+						"query": "SELECT last(\"gpu_mem\")/1000000 FROM \"telegraf\"..\"raspberry_pi\" WHERE time > :dashboardTime: AND \"host\"=':host:'",
+						"queryConfig": {
+							"database": "",
+							"measurement": "",
+							"retentionPolicy": "",
+							"fields": [],
+							"tags": {},
+							"groupBy": {
+								"time": "",
+								"tags": []
+							},
+							"areTagsAccepted": false,
+							"rawText": "SELECT last(\"gpu_mem\")/1000000 FROM \"telegraf\"..\"raspberry_pi\" WHERE time > :dashboardTime: AND \"host\"=':host:'",
+							"range": null,
+							"shifts": null
+						},
+						"source": "",
+						"type": "influxql"
+					}
+				],
+				"axes": {
+					"x": {
+						"bounds": [
+							"",
+							""
+						],
+						"label": "",
+						"prefix": "",
+						"suffix": "",
+						"base": "10",
+						"scale": "linear"
+					},
+					"y": {
+						"bounds": [
+							"",
+							""
+						],
+						"label": "frequency",
+						"prefix": "",
+						"suffix": " MB",
+						"base": "10",
+						"scale": "linear"
+					},
+					"y2": {
+						"bounds": [
+							"",
+							""
+						],
+						"label": "",
+						"prefix": "",
+						"suffix": "",
+						"base": "10",
+						"scale": "linear"
+					}
+				},
+				"type": "single-stat",
+				"colors": [
+					{
+						"id": "base",
+						"type": "text",
+						"hex": "#00C9FF",
+						"name": "laser",
+						"value": "-1000000000000000000"
+					}
+				],
+				"legend": {},
+				"tableOptions": {
+					"verticalTimeAxis": true,
+					"sortBy": {
+						"internalName": "time",
+						"displayName": "",
+						"visible": true
+					},
+					"wrapping": "truncate",
+					"fixFirstColumn": true
+				},
+				"fieldOptions": [
+					{
+						"internalName": "time",
+						"displayName": "",
+						"visible": true
+					}
+				],
+				"timeFormat": "MM/DD/YYYY HH:mm:ss",
+				"decimalPlaces": {
+					"isEnforced": true,
+					"digits": 0
+				},
+				"note": "",
+				"noteVisibility": "default",
+				"links": {
+					"self": "/chronograf/v1/dashboards/58/cells/f46b099d-f178-488d-9352-b3f48f8dce55"
+				}
+			},
+			{
+				"i": "eee7d9ad-41d3-44e3-bc78-c78cbbbc5110",
+				"x": 8,
+				"y": 0,
+				"w": 2,
+				"h": 1,
+				"name": "ARM Memory - :host:",
+				"queries": [
+					{
+						"query": "SELECT last(\"arm_mem\")/1000000 FROM \"telegraf\"..\"raspberry_pi\" WHERE time > :dashboardTime: AND \"host\"=':host:'",
+						"queryConfig": {
+							"database": "",
+							"measurement": "",
+							"retentionPolicy": "",
+							"fields": [],
+							"tags": {},
+							"groupBy": {
+								"time": "",
+								"tags": []
+							},
+							"areTagsAccepted": false,
+							"rawText": "SELECT last(\"arm_mem\")/1000000 FROM \"telegraf\"..\"raspberry_pi\" WHERE time > :dashboardTime: AND \"host\"=':host:'",
+							"range": null,
+							"shifts": null
+						},
+						"source": "",
+						"type": "influxql"
+					}
+				],
+				"axes": {
+					"x": {
+						"bounds": [
+							"",
+							""
+						],
+						"label": "",
+						"prefix": "",
+						"suffix": "",
+						"base": "10",
+						"scale": "linear"
+					},
+					"y": {
+						"bounds": [
+							"",
+							""
+						],
+						"label": "frequency",
+						"prefix": "",
+						"suffix": " MB",
+						"base": "10",
+						"scale": "linear"
+					},
+					"y2": {
+						"bounds": [
+							"",
+							""
+						],
+						"label": "",
+						"prefix": "",
+						"suffix": "",
+						"base": "10",
+						"scale": "linear"
+					}
+				},
+				"type": "single-stat",
+				"colors": [
+					{
+						"id": "base",
+						"type": "text",
+						"hex": "#00C9FF",
+						"name": "laser",
+						"value": "-1000000000000000000"
+					}
+				],
+				"legend": {},
+				"tableOptions": {
+					"verticalTimeAxis": true,
+					"sortBy": {
+						"internalName": "time",
+						"displayName": "",
+						"visible": true
+					},
+					"wrapping": "truncate",
+					"fixFirstColumn": true
+				},
+				"fieldOptions": [
+					{
+						"internalName": "time",
+						"displayName": "",
+						"visible": true
+					}
+				],
+				"timeFormat": "MM/DD/YYYY HH:mm:ss",
+				"decimalPlaces": {
+					"isEnforced": true,
+					"digits": 0
+				},
+				"note": "",
+				"noteVisibility": "default",
+				"links": {
+					"self": "/chronograf/v1/dashboards/58/cells/eee7d9ad-41d3-44e3-bc78-c78cbbbc5110"
+				}
+			},
+			{
+				"i": "45b64fbe-408c-4302-be86-63120b44addb",
+				"x": 6,
+				"y": 0,
+				"w": 2,
+				"h": 1,
+				"name": "SDRAM Max. Freq. - :host:",
+				"queries": [
+					{
+						"query": "SELECT last(\"config_sdram_freq\")/1000000 FROM \"telegraf\"..\"raspberry_pi\" WHERE time > :dashboardTime: AND \"host\"=':host:'",
+						"queryConfig": {
+							"database": "",
+							"measurement": "",
+							"retentionPolicy": "",
+							"fields": [],
+							"tags": {},
+							"groupBy": {
+								"time": "",
+								"tags": []
+							},
+							"areTagsAccepted": false,
+							"rawText": "SELECT last(\"config_sdram_freq\")/1000000 FROM \"telegraf\"..\"raspberry_pi\" WHERE time > :dashboardTime: AND \"host\"=':host:'",
+							"range": null,
+							"shifts": null
+						},
+						"source": "",
+						"type": "influxql"
+					}
+				],
+				"axes": {
+					"x": {
+						"bounds": [
+							"",
+							""
+						],
+						"label": "",
+						"prefix": "",
+						"suffix": "",
+						"base": "10",
+						"scale": "linear"
+					},
+					"y": {
+						"bounds": [
+							"",
+							""
+						],
+						"label": "frequency",
+						"prefix": "",
+						"suffix": " MHz",
+						"base": "10",
+						"scale": "linear"
+					},
+					"y2": {
+						"bounds": [
+							"",
+							""
+						],
+						"label": "",
+						"prefix": "",
+						"suffix": "",
+						"base": "10",
+						"scale": "linear"
+					}
+				},
+				"type": "single-stat",
+				"colors": [
+					{
+						"id": "base",
+						"type": "text",
+						"hex": "#00C9FF",
+						"name": "laser",
+						"value": "-1000000000000000000"
+					}
+				],
+				"legend": {},
+				"tableOptions": {
+					"verticalTimeAxis": true,
+					"sortBy": {
+						"internalName": "time",
+						"displayName": "",
+						"visible": true
+					},
+					"wrapping": "truncate",
+					"fixFirstColumn": true
+				},
+				"fieldOptions": [
+					{
+						"internalName": "time",
+						"displayName": "",
+						"visible": true
+					}
+				],
+				"timeFormat": "MM/DD/YYYY HH:mm:ss",
+				"decimalPlaces": {
+					"isEnforced": true,
+					"digits": 0
+				},
+				"note": "",
+				"noteVisibility": "default",
+				"links": {
+					"self": "/chronograf/v1/dashboards/58/cells/45b64fbe-408c-4302-be86-63120b44addb"
+				}
+			},
+			{
+				"i": "59a6b7df-caed-49dc-9119-de77515eed2b",
+				"x": 4,
+				"y": 0,
+				"w": 2,
+				"h": 1,
+				"name": "GPU Max. Freq. - :host:",
+				"queries": [
+					{
+						"query": "SELECT last(\"config_gpu_freq\")/1000000 FROM \"telegraf\"..\"raspberry_pi\" WHERE time > :dashboardTime: AND \"host\"=':host:'",
+						"queryConfig": {
+							"database": "",
+							"measurement": "",
+							"retentionPolicy": "",
+							"fields": [],
+							"tags": {},
+							"groupBy": {
+								"time": "",
+								"tags": []
+							},
+							"areTagsAccepted": false,
+							"rawText": "SELECT last(\"config_gpu_freq\")/1000000 FROM \"telegraf\"..\"raspberry_pi\" WHERE time > :dashboardTime: AND \"host\"=':host:'",
+							"range": null,
+							"shifts": null
+						},
+						"source": "",
+						"type": "influxql"
+					}
+				],
+				"axes": {
+					"x": {
+						"bounds": [
+							"",
+							""
+						],
+						"label": "",
+						"prefix": "",
+						"suffix": "",
+						"base": "10",
+						"scale": "linear"
+					},
+					"y": {
+						"bounds": [
+							"",
+							""
+						],
+						"label": "frequency",
+						"prefix": "",
+						"suffix": " MHz",
+						"base": "10",
+						"scale": "linear"
+					},
+					"y2": {
+						"bounds": [
+							"",
+							""
+						],
+						"label": "",
+						"prefix": "",
+						"suffix": "",
+						"base": "10",
+						"scale": "linear"
+					}
+				},
+				"type": "single-stat",
+				"colors": [
+					{
+						"id": "base",
+						"type": "text",
+						"hex": "#00C9FF",
+						"name": "laser",
+						"value": "-1000000000000000000"
+					}
+				],
+				"legend": {},
+				"tableOptions": {
+					"verticalTimeAxis": true,
+					"sortBy": {
+						"internalName": "time",
+						"displayName": "",
+						"visible": true
+					},
+					"wrapping": "truncate",
+					"fixFirstColumn": true
+				},
+				"fieldOptions": [
+					{
+						"internalName": "time",
+						"displayName": "",
+						"visible": true
+					}
+				],
+				"timeFormat": "MM/DD/YYYY HH:mm:ss",
+				"decimalPlaces": {
+					"isEnforced": true,
+					"digits": 0
+				},
+				"note": "",
+				"noteVisibility": "default",
+				"links": {
+					"self": "/chronograf/v1/dashboards/58/cells/59a6b7df-caed-49dc-9119-de77515eed2b"
+				}
+			},
+			{
+				"i": "83ac82c9-9fcd-42d6-b08c-0c8fa6617817",
+				"x": 2,
+				"y": 0,
+				"w": 2,
+				"h": 1,
+				"name": "Core Max. Freq. - :host:",
+				"queries": [
+					{
+						"query": "SELECT last(\"config_core_freq\")/1000000 FROM \"telegraf\"..\"raspberry_pi\" WHERE time > :dashboardTime: AND \"host\"=':host:'",
+						"queryConfig": {
+							"database": "",
+							"measurement": "",
+							"retentionPolicy": "",
+							"fields": [],
+							"tags": {},
+							"groupBy": {
+								"time": "",
+								"tags": []
+							},
+							"areTagsAccepted": false,
+							"rawText": "SELECT last(\"config_core_freq\")/1000000 FROM \"telegraf\"..\"raspberry_pi\" WHERE time > :dashboardTime: AND \"host\"=':host:'",
+							"range": null,
+							"shifts": null
+						},
+						"source": "",
+						"type": "influxql"
+					}
+				],
+				"axes": {
+					"x": {
+						"bounds": [
+							"",
+							""
+						],
+						"label": "",
+						"prefix": "",
+						"suffix": "",
+						"base": "10",
+						"scale": "linear"
+					},
+					"y": {
+						"bounds": [
+							"",
+							""
+						],
+						"label": "frequency",
+						"prefix": "",
+						"suffix": " MHz",
+						"base": "10",
+						"scale": "linear"
+					},
+					"y2": {
+						"bounds": [
+							"",
+							""
+						],
+						"label": "",
+						"prefix": "",
+						"suffix": "",
+						"base": "10",
+						"scale": "linear"
+					}
+				},
+				"type": "single-stat",
+				"colors": [
+					{
+						"id": "base",
+						"type": "text",
+						"hex": "#00C9FF",
+						"name": "laser",
+						"value": "-1000000000000000000"
+					}
+				],
+				"legend": {},
+				"tableOptions": {
+					"verticalTimeAxis": true,
+					"sortBy": {
+						"internalName": "time",
+						"displayName": "",
+						"visible": true
+					},
+					"wrapping": "truncate",
+					"fixFirstColumn": true
+				},
+				"fieldOptions": [
+					{
+						"internalName": "time",
+						"displayName": "",
+						"visible": true
+					}
+				],
+				"timeFormat": "MM/DD/YYYY HH:mm:ss",
+				"decimalPlaces": {
+					"isEnforced": true,
+					"digits": 0
+				},
+				"note": "",
+				"noteVisibility": "default",
+				"links": {
+					"self": "/chronograf/v1/dashboards/58/cells/83ac82c9-9fcd-42d6-b08c-0c8fa6617817"
+				}
+			},
+			{
+				"i": "dccfc1d9-033c-425d-b52e-ba7f4f69822b",
+				"x": 0,
+				"y": 0,
+				"w": 2,
+				"h": 1,
+				"name": "ARM Max. Freq. - :host:",
+				"queries": [
+					{
+						"query": "SELECT last(\"config_arm_freq\")/1000000 FROM \"telegraf\"..\"raspberry_pi\" WHERE time > :dashboardTime: AND \"host\"=':host:'",
+						"queryConfig": {
+							"database": "",
+							"measurement": "",
+							"retentionPolicy": "",
+							"fields": [],
+							"tags": {},
+							"groupBy": {
+								"time": "",
+								"tags": []
+							},
+							"areTagsAccepted": false,
+							"rawText": "SELECT last(\"config_arm_freq\")/1000000 FROM \"telegraf\"..\"raspberry_pi\" WHERE time > :dashboardTime: AND \"host\"=':host:'",
+							"range": null,
+							"shifts": null
+						},
+						"source": "",
+						"type": "influxql"
+					}
+				],
+				"axes": {
+					"x": {
+						"bounds": [
+							"",
+							""
+						],
+						"label": "",
+						"prefix": "",
+						"suffix": "",
+						"base": "10",
+						"scale": "linear"
+					},
+					"y": {
+						"bounds": [
+							"",
+							""
+						],
+						"label": "frequency",
+						"prefix": "",
+						"suffix": " MHz",
+						"base": "10",
+						"scale": "linear"
+					},
+					"y2": {
+						"bounds": [
+							"",
+							""
+						],
+						"label": "",
+						"prefix": "",
+						"suffix": "",
+						"base": "10",
+						"scale": "linear"
+					}
+				},
+				"type": "single-stat",
+				"colors": [
+					{
+						"id": "base",
+						"type": "text",
+						"hex": "#00C9FF",
+						"name": "laser",
+						"value": "-1000000000000000000"
+					}
+				],
+				"legend": {},
+				"tableOptions": {
+					"verticalTimeAxis": true,
+					"sortBy": {
+						"internalName": "time",
+						"displayName": "",
+						"visible": true
+					},
+					"wrapping": "truncate",
+					"fixFirstColumn": true
+				},
+				"fieldOptions": [
+					{
+						"internalName": "time",
+						"displayName": "",
+						"visible": true
+					}
+				],
+				"timeFormat": "MM/DD/YYYY HH:mm:ss",
+				"decimalPlaces": {
+					"isEnforced": true,
+					"digits": 0
+				},
+				"note": "",
+				"noteVisibility": "default",
+				"links": {
+					"self": "/chronograf/v1/dashboards/58/cells/dccfc1d9-033c-425d-b52e-ba7f4f69822b"
+				}
+			},
+			{
+				"i": "727b601f-119d-41fc-8fd6-16de136a9a8d",
+				"x": 0,
+				"y": 7,
+				"w": 6,
+				"h": 3,
+				"name": "SOC Temperature - :host:",
+				"queries": [
+					{
+						"query": "SELECT mean(\"soc_temp\") AS \"SOC temperature\" FROM \"telegraf\"..\"raspberry_pi\" WHERE time > :dashboardTime: AND \"host\"=':host:' GROUP BY time(:interval:) FILL(null)",
+						"queryConfig": {
+							"database": "telegraf",
+							"measurement": "raspberry_pi",
+							"retentionPolicy": "",
+							"fields": [
+								{
+									"value": "mean",
+									"type": "func",
+									"alias": "SOC temperature",
+									"args": [
+										{
+											"value": "soc_temp",
+											"type": "field",
+											"alias": ""
+										}
+									]
+								}
+							],
+							"tags": {
+								"host": [
+									":host:"
+								]
+							},
+							"groupBy": {
+								"time": "auto",
+								"tags": []
+							},
+							"areTagsAccepted": true,
+							"fill": "null",
+							"rawText": null,
+							"range": null,
+							"shifts": null
+						},
+						"source": "",
+						"type": "influxql"
+					}
+				],
+				"axes": {
+					"x": {
+						"bounds": [
+							"",
+							""
+						],
+						"label": "",
+						"prefix": "",
+						"suffix": "",
+						"base": "10",
+						"scale": "linear"
+					},
+					"y": {
+						"bounds": [
+							"0",
+							""
+						],
+						"label": "temperature",
+						"prefix": "",
+						"suffix": "C",
+						"base": "raw",
+						"scale": "linear"
+					},
+					"y2": {
+						"bounds": [
+							"",
+							""
+						],
+						"label": "",
+						"prefix": "",
+						"suffix": "",
+						"base": "10",
+						"scale": "linear"
+					}
+				},
+				"type": "line",
+				"colors": [
+					{
+						"id": "913bc2a2-9b17-4dde-b815-d25ab60e6074",
+						"type": "scale",
+						"hex": "#31C0F6",
+						"name": "Nineteen Eighty Four",
+						"value": "0"
+					},
+					{
+						"id": "4d5af615-6922-417a-9dcd-068567d1382d",
+						"type": "scale",
+						"hex": "#A500A5",
+						"name": "Nineteen Eighty Four",
+						"value": "0"
+					},
+					{
+						"id": "057442e2-7f4a-4ecf-b96e-9085c3110a2e",
+						"type": "scale",
+						"hex": "#FF7E27",
+						"name": "Nineteen Eighty Four",
+						"value": "0"
+					}
+				],
+				"legend": {},
+				"tableOptions": {
+					"verticalTimeAxis": true,
+					"sortBy": {
+						"internalName": "time",
+						"displayName": "",
+						"visible": true
+					},
+					"wrapping": "truncate",
+					"fixFirstColumn": true
+				},
+				"fieldOptions": [
+					{
+						"internalName": "time",
+						"displayName": "",
+						"visible": true
+					}
+				],
+				"timeFormat": "MM/DD/YYYY HH:mm:ss",
+				"decimalPlaces": {
+					"isEnforced": true,
+					"digits": 2
+				},
+				"note": "",
+				"noteVisibility": "default",
+				"links": {
+					"self": "/chronograf/v1/dashboards/58/cells/727b601f-119d-41fc-8fd6-16de136a9a8d"
+				}
+			},
+			{
+				"i": "ec2d54d4-22a8-4acd-b29d-c234fddee35e",
+				"x": 4,
+				"y": 1,
+				"w": 2,
+				"h": 3,
+				"name": "SOC Temperature - :host:",
+				"queries": [
+					{
+						"query": "SELECT last(\"soc_temp\") AS \"SOC temperature\" FROM \"telegraf\"..\"raspberry_pi\" WHERE time > :dashboardTime: AND \"host\"=':host:'",
+						"queryConfig": {
+							"database": "telegraf",
+							"measurement": "raspberry_pi",
+							"retentionPolicy": "",
+							"fields": [
+								{
+									"value": "last",
+									"type": "func",
+									"alias": "SOC temperature",
+									"args": [
+										{
+											"value": "soc_temp",
+											"type": "field",
+											"alias": ""
+										}
+									]
+								}
+							],
+							"tags": {
+								"host": [
+									":host:"
+								]
+							},
+							"groupBy": {
+								"time": "",
+								"tags": []
+							},
+							"areTagsAccepted": true,
+							"rawText": null,
+							"range": null,
+							"shifts": null
+						},
+						"source": "",
+						"type": "influxql"
+					}
+				],
+				"axes": {
+					"x": {
+						"bounds": [
+							"",
+							""
+						],
+						"label": "",
+						"prefix": "",
+						"suffix": "",
+						"base": "10",
+						"scale": "linear"
+					},
+					"y": {
+						"bounds": [
+							"",
+							""
+						],
+						"label": "frequency",
+						"prefix": "",
+						"suffix": " C",
+						"base": "10",
+						"scale": "linear"
+					},
+					"y2": {
+						"bounds": [
+							"",
+							""
+						],
+						"label": "",
+						"prefix": "",
+						"suffix": "",
+						"base": "10",
+						"scale": "linear"
+					}
+				},
+				"type": "gauge",
+				"colors": [
+					{
+						"id": "0",
+						"type": "min",
+						"hex": "#00C9FF",
+						"name": "laser",
+						"value": "0"
+					},
+					{
+						"id": "4ea88a1e-856b-4030-8a97-65c00f0e5591",
+						"type": "threshold",
+						"hex": "#FFD255",
+						"name": "thunder",
+						"value": "70"
+					},
+					{
+						"id": "f303d714-0767-4524-abf9-2db00bebd79e",
+						"type": "threshold",
+						"hex": "#F48D38",
+						"name": "tiger",
+						"value": "80"
+					},
+					{
+						"id": "0a7f4cbe-cfc1-4cdd-9801-e498a6eedd9a",
+						"type": "threshold",
+						"hex": "#DC4E58",
+						"name": "fire",
+						"value": "90"
+					},
+					{
+						"id": "1",
+						"type": "max",
+						"hex": "#DC4E58",
+						"name": "fire",
+						"value": "100"
+					}
+				],
+				"legend": {},
+				"tableOptions": {
+					"verticalTimeAxis": true,
+					"sortBy": {
+						"internalName": "time",
+						"displayName": "",
+						"visible": true
+					},
+					"wrapping": "truncate",
+					"fixFirstColumn": true
+				},
+				"fieldOptions": [
+					{
+						"internalName": "time",
+						"displayName": "",
+						"visible": true
+					}
+				],
+				"timeFormat": "MM/DD/YYYY HH:mm:ss",
+				"decimalPlaces": {
+					"isEnforced": true,
+					"digits": 1
+				},
+				"note": "",
+				"noteVisibility": "default",
+				"links": {
+					"self": "/chronograf/v1/dashboards/58/cells/ec2d54d4-22a8-4acd-b29d-c234fddee35e"
+				}
+			},
+			{
+				"i": "0b032923-021c-4947-8c4c-e7fd062c0717",
+				"x": 0,
+				"y": 4,
+				"w": 6,
+				"h": 3,
+				"name": "ARM & Core Frequency - :host:",
+				"queries": [
+					{
+						"query": "SELECT mean(\"arm_freq\") AS \"ARM frequency\", mean(\"core_freq\") AS \"Core frequency\" FROM \"telegraf\"..\"raspberry_pi\" WHERE time > :dashboardTime: AND \"host\"=':host:' GROUP BY time(:interval:) FILL(null)",
+						"queryConfig": {
+							"database": "telegraf",
+							"measurement": "raspberry_pi",
+							"retentionPolicy": "",
+							"fields": [
+								{
+									"value": "mean",
+									"type": "func",
+									"alias": "ARM frequency",
+									"args": [
+										{
+											"value": "arm_freq",
+											"type": "field",
+											"alias": ""
+										}
+									]
+								},
+								{
+									"value": "mean",
+									"type": "func",
+									"alias": "Core frequency",
+									"args": [
+										{
+											"value": "core_freq",
+											"type": "field",
+											"alias": ""
+										}
+									]
+								}
+							],
+							"tags": {
+								"host": [
+									":host:"
+								]
+							},
+							"groupBy": {
+								"time": "auto",
+								"tags": []
+							},
+							"areTagsAccepted": true,
+							"fill": "null",
+							"rawText": null,
+							"range": null,
+							"shifts": null
+						},
+						"source": "",
+						"type": "influxql"
+					}
+				],
+				"axes": {
+					"x": {
+						"bounds": [
+							"",
+							""
+						],
+						"label": "",
+						"prefix": "",
+						"suffix": "",
+						"base": "10",
+						"scale": "linear"
+					},
+					"y": {
+						"bounds": [
+							"0",
+							""
+						],
+						"label": "frequency",
+						"prefix": "",
+						"suffix": "Hz",
+						"base": "10",
+						"scale": "linear"
+					},
+					"y2": {
+						"bounds": [
+							"",
+							""
+						],
+						"label": "",
+						"prefix": "",
+						"suffix": "",
+						"base": "10",
+						"scale": "linear"
+					}
+				},
+				"type": "line",
+				"colors": [
+					{
+						"id": "913bc2a2-9b17-4dde-b815-d25ab60e6074",
+						"type": "scale",
+						"hex": "#31C0F6",
+						"name": "Nineteen Eighty Four",
+						"value": "0"
+					},
+					{
+						"id": "4d5af615-6922-417a-9dcd-068567d1382d",
+						"type": "scale",
+						"hex": "#A500A5",
+						"name": "Nineteen Eighty Four",
+						"value": "0"
+					},
+					{
+						"id": "057442e2-7f4a-4ecf-b96e-9085c3110a2e",
+						"type": "scale",
+						"hex": "#FF7E27",
+						"name": "Nineteen Eighty Four",
+						"value": "0"
+					}
+				],
+				"legend": {},
+				"tableOptions": {
+					"verticalTimeAxis": true,
+					"sortBy": {
+						"internalName": "time",
+						"displayName": "",
+						"visible": true
+					},
+					"wrapping": "truncate",
+					"fixFirstColumn": true
+				},
+				"fieldOptions": [
+					{
+						"internalName": "time",
+						"displayName": "",
+						"visible": true
+					}
+				],
+				"timeFormat": "MM/DD/YYYY HH:mm:ss",
+				"decimalPlaces": {
+					"isEnforced": true,
+					"digits": 2
+				},
+				"note": "",
+				"noteVisibility": "default",
+				"links": {
+					"self": "/chronograf/v1/dashboards/58/cells/0b032923-021c-4947-8c4c-e7fd062c0717"
+				}
+			}
+		],
+		"templates": [
+			{
+				"tempVar": ":host:",
+				"values": [
+					{
+						"value": "rpi1",
+						"type": "influxql",
+						"selected": true
+					}
+				],
+				"id": "683079fe-0c4f-4eed-a602-3f93387e922e",
+				"type": "influxql",
+				"label": "",
+				"query": {
+					"influxql": "SHOW TAG VALUES ON \"telegraf\" FROM \"raspberry_pi\" WITH KEY=\"host\"",
+					"measurement": "",
+					"tagKey": "",
+					"fieldKey": ""
+				},
+				"links": {
+					"self": "/chronograf/v1/dashboards/58/templates/683079fe-0c4f-4eed-a602-3f93387e922e"
+				}
+			}
+		],
+		"name": "Raspberry Pi: Health",
+		"organization": "default",
+		"links": {
+			"self": "/chronograf/v1/dashboards/58",
+			"cells": "/chronograf/v1/dashboards/58/cells",
+			"templates": "/chronograf/v1/dashboards/58/templates"
+		}
+	}
+}
