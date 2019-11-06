@@ -10,7 +10,7 @@ The provided `rpi-stats.sh` script collects statistics using Raspbian's `vcgencm
 
 > To learn how to install Telegraf (and the rest of the TICK Stack) on the Raspberry Pi, refer to this [blog](https://www.influxdata.com/blog/running-the-tick-stack-on-a-raspberry-pi/).
 
-Copy the script to the directory from which you wish to run it (I usually put it in `/usr/local/bin`), and ensure that it can be executed by the user under which Telegraf will be run (the default user is `telegraf`). The user will need to have `sudo` rights.
+Copy the script to the directory from which you wish to run it (I usually put it in `/usr/local/bin`), and ensure that it can be executed by the user under which Telegraf will be run (the default user is `telegraf`). The user will either need to have `sudo` rights or, it is sufficient to add the telegraf user to the `video` group using `sudo usermod -aG video telegraf`.
 
 Configure the Telegraf [exec](https://github.com/influxdata/telegraf/tree/master/plugins/inputs/exec) input to execute the script. For example...
 
