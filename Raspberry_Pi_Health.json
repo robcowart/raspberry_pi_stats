@@ -534,7 +534,7 @@
 							"0",
 							""
 						],
-						"label": "errors",
+						"label": "MEM ERRORS",
 						"prefix": "",
 						"suffix": "",
 						"base": "10",
@@ -693,17 +693,24 @@
 						"type": "min",
 						"hex": "#DC4E58",
 						"name": "fire",
-						"value": "0"
+						"value": "0.6"
 					},
 					{
 						"id": "4f679c99-31dd-449e-badc-726f8b7f88cc",
 						"type": "threshold",
 						"hex": "#32B08C",
 						"name": "viridian",
-						"value": "1.15"
+						"value": "0.8"
 					},
 					{
 						"id": "acf257b9-c195-44ca-a869-8ec0d4692538",
+						"type": "threshold",
+						"hex": "#F48D38",
+						"name": "tiger",
+						"value": "1.25"
+					},
+					{
+						"id": "64e4b849-8806-4640-9a71-cf3fd74098b5",
 						"type": "threshold",
 						"hex": "#DC4E58",
 						"name": "fire",
@@ -714,7 +721,7 @@
 						"type": "max",
 						"hex": "#9394FF",
 						"name": "comet",
-						"value": "2.5"
+						"value": "1.55"
 					}
 				],
 				"legend": {},
@@ -993,17 +1000,24 @@
 						"type": "min",
 						"hex": "#DC4E58",
 						"name": "fire",
-						"value": "0"
+						"value": "0.6"
 					},
 					{
 						"id": "4f679c99-31dd-449e-badc-726f8b7f88cc",
 						"type": "threshold",
 						"hex": "#32B08C",
 						"name": "viridian",
-						"value": "1.15"
+						"value": "0.8"
 					},
 					{
 						"id": "acf257b9-c195-44ca-a869-8ec0d4692538",
+						"type": "threshold",
+						"hex": "#F48D38",
+						"name": "tiger",
+						"value": "1.25"
+					},
+					{
+						"id": "e93f472d-aff8-4cd9-ba4d-e0a978257579",
 						"type": "threshold",
 						"hex": "#DC4E58",
 						"name": "fire",
@@ -1014,7 +1028,7 @@
 						"type": "max",
 						"hex": "#9394FF",
 						"name": "comet",
-						"value": "2.5"
+						"value": "1.55"
 					}
 				],
 				"legend": {},
@@ -1134,28 +1148,35 @@
 						"type": "min",
 						"hex": "#DC4E58",
 						"name": "fire",
-						"value": "0"
+						"value": "0.6"
 					},
 					{
 						"id": "4f679c99-31dd-449e-badc-726f8b7f88cc",
 						"type": "threshold",
 						"hex": "#32B08C",
 						"name": "viridian",
-						"value": "1.25"
+						"value": "0.8"
 					},
 					{
 						"id": "acf257b9-c195-44ca-a869-8ec0d4692538",
 						"type": "threshold",
+						"hex": "#FFB94A",
+						"name": "pineapple",
+						"value": "1.25"
+					},
+					{
+						"id": "5f364147-d5e3-48ed-818a-faa7245f53f2",
+						"type": "threshold",
 						"hex": "#DC4E58",
 						"name": "fire",
-						"value": "1.45"
+						"value": "1.35"
 					},
 					{
 						"id": "1",
 						"type": "max",
 						"hex": "#9394FF",
 						"name": "comet",
-						"value": "2.7"
+						"value": "1.55"
 					}
 				],
 				"legend": {},
@@ -2410,12 +2431,12 @@
 					"y": {
 						"bounds": [
 							"0",
-							""
+							"1600000000"
 						],
 						"label": "CORE & CPU FREQ",
 						"prefix": "",
 						"suffix": "Hz",
-						"base": "10",
+						"base": "2",
 						"scale": "linear"
 					},
 					"y2": {
