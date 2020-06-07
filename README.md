@@ -4,7 +4,7 @@ A script to collect various Raspberry Pi statistics, which are sent via Telegraf
 
 ## Notes about my modifications:
 Most of the files have been modified, and the OC settings in config.txt are:
-```txt
+```python
 # Overclocking:
 over_voltage=6
 arm_freq=2000
