@@ -2,6 +2,21 @@
 
 A script to collect various Raspberry Pi statistics, which are sent via Telegraf to InfluxDB.
 
+## Notes about my modifications:
+Most of the files have been modified, and the OC settings in config.txt are:
+```
+# Overclocking:
+over_voltage=6
+arm_freq=2000
+
+isp_freq=750
+v3d_freq=750
+h264_freq=750
+hdmi_enable_4kp60=1
+
+sdram_freq=3200
+```
+
 ![raspberry_pi_stats_github_social](https://user-images.githubusercontent.com/10326954/59145214-fce42300-89e0-11e9-9de4-f5b3e2cd4507.png)
 
 ## Collecting Raspberry Pi Statistics
