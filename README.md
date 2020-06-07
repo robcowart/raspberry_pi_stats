@@ -12,7 +12,7 @@ arm_freq=2000
 isp_freq=750
 v3d_freq=750
 h264_freq=750
-hdmi_enable_4kp60=1
+hdmi_enable_4kp60=1 #This is the only way to overclock the Core, uping it to 550MHz
 
 sdram_freq=3200
 ```
