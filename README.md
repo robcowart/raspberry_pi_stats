@@ -16,7 +16,7 @@ hdmi_enable_4kp60=1
 
 sdram_freq=3200
 ```
-> The reason I enable `hdmi_enable_4kp60` is because according to the [RaspberryPi documentation](https://www.raspberrypi.org/documentation/configuration/config-txt/overclocking.md), it is the only way to overclock the Core freq. of the Pi4.
+> The reason I enable `hdmi_enable_4kp60` is because according to the [RaspberryPi documentation](https://www.raspberrypi.org/documentation/configuration/config-txt/overclocking.md), it is the only way to safely overclock the Core frequency of the Pi4.
 
 I also added changed the `gpu_freq` to be `v3d_freq`, and thus, i changed the [rpi-stats.sh](rpi-stats.sh) file to add such functionality. On top of that, I added some default calls to telegraf.conf, just so I could get some more statistics about the host, and most importantly, about the usage of each core.
 
