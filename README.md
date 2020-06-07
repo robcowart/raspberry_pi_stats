@@ -16,6 +16,12 @@ hdmi_enable_4kp60=1 # This is the only way to overclock the Core, uping it to 55
 
 sdram_freq=3200
 ```
+I also added changed the `gpu_freq` to be `v3d_freq`, and thus, i changed the [rpi-stats.sh](rpi-stats.sh) file to add such functionality.
+
+The [Raspberry_Pi_OC_Health.json](Raspberry_Pi_OC_Health.json) dashboard looks like this:
+(example.png)
+
+## Back to the original README:
 
 ![raspberry_pi_stats_github_social](https://user-images.githubusercontent.com/10326954/59145214-fce42300-89e0-11e9-9de4-f5b3e2cd4507.png)
 
