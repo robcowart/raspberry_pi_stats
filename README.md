@@ -2,7 +2,7 @@
 
 A script to collect various Raspberry Pi statistics, which are sent via Telegraf to InfluxDB.
 
-![raspberry_pi_stats_github_social](example.png)
+![raspberry_pi_stats_github_social](https://user-images.githubusercontent.com/10326954/59145214-fce42300-89e0-11e9-9de4-f5b3e2cd4507.png)
 
 ## Collecting Raspberry Pi Statistics
 
