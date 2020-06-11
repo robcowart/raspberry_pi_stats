@@ -12,6 +12,109 @@
 		"id": "10",
 		"cells": [
 			{
+				"i": "063ddda4-0e10-4425-914f-5f419093acc8",
+				"x": 0,
+				"y": 0,
+				"w": 2,
+				"h": 1,
+				"name": "Uptime",
+				"queries": [
+					{
+						"query": "SELECT mean(\"uptime\")/(3600) AS \"mean_uptime\" FROM \"telegraf\".\"autogen\".\"system\" WHERE time > :dashboardTime: AND time < :upperDashboardTime: AND \"host\"='dockerpi' GROUP BY time(:interval:) FILL(previous)",
+						"queryConfig": {
+							"database": "",
+							"measurement": "",
+							"retentionPolicy": "",
+							"fields": [],
+							"tags": {},
+							"groupBy": {
+								"time": "",
+								"tags": []
+							},
+							"areTagsAccepted": false,
+							"rawText": "SELECT mean(\"uptime\")/(3600) AS \"mean_uptime\" FROM \"telegraf\".\"autogen\".\"system\" WHERE time > :dashboardTime: AND time < :upperDashboardTime: AND \"host\"='dockerpi' GROUP BY time(:interval:) FILL(previous)",
+							"range": null,
+							"shifts": null
+						},
+						"source": "",
+						"type": "influxql"
+					}
+				],
+				"axes": {
+					"x": {
+						"bounds": [
+							"",
+							""
+						],
+						"label": "",
+						"prefix": "",
+						"suffix": "",
+						"base": "10",
+						"scale": "linear"
+					},
+					"y": {
+						"bounds": [
+							"",
+							""
+						],
+						"label": "",
+						"prefix": "",
+						"suffix": " h",
+						"base": "10",
+						"scale": "linear"
+					},
+					"y2": {
+						"bounds": [
+							"",
+							""
+						],
+						"label": "",
+						"prefix": "",
+						"suffix": "",
+						"base": "10",
+						"scale": "linear"
+					}
+				},
+				"type": "single-stat",
+				"colors": [
+					{
+						"id": "base",
+						"type": "text",
+						"hex": "#00C9FF",
+						"name": "laser",
+						"value": "-1000000000000000000"
+					}
+				],
+				"legend": {},
+				"tableOptions": {
+					"verticalTimeAxis": true,
+					"sortBy": {
+						"internalName": "time",
+						"displayName": "",
+						"visible": true
+					},
+					"wrapping": "truncate",
+					"fixFirstColumn": true
+				},
+				"fieldOptions": [
+					{
+						"internalName": "time",
+						"displayName": "",
+						"visible": true
+					}
+				],
+				"timeFormat": "MM/DD/YYYY HH:mm:ss",
+				"decimalPlaces": {
+					"isEnforced": true,
+					"digits": 0
+				},
+				"note": "",
+				"noteVisibility": "default",
+				"links": {
+					"self": "/chronograf/v1/dashboards/10/cells/063ddda4-0e10-4425-914f-5f419093acc8"
+				}
+			},
+			{
 				"i": "de107405-6bcd-4cdf-80b7-db7bd668ffd2",
 				"x": 6,
 				"y": 4,
@@ -1972,109 +2075,6 @@
 				}
 			},
 			{
-				"i": "be233e6d-71ac-4b84-8348-7a588ab4d9b7",
-				"x": 0,
-				"y": 0,
-				"w": 2,
-				"h": 1,
-				"name": "ARM Max. Freq",
-				"queries": [
-					{
-						"query": "SELECT last(\"config_arm_freq\")/1000000 FROM \"telegraf\"..\"raspberry_pi\" WHERE time > :dashboardTime: AND \"host\"=':host:'",
-						"queryConfig": {
-							"database": "",
-							"measurement": "",
-							"retentionPolicy": "",
-							"fields": [],
-							"tags": {},
-							"groupBy": {
-								"time": "",
-								"tags": []
-							},
-							"areTagsAccepted": false,
-							"rawText": "SELECT last(\"config_arm_freq\")/1000000 FROM \"telegraf\"..\"raspberry_pi\" WHERE time > :dashboardTime: AND \"host\"=':host:'",
-							"range": null,
-							"shifts": null
-						},
-						"source": "",
-						"type": "influxql"
-					}
-				],
-				"axes": {
-					"x": {
-						"bounds": [
-							"",
-							""
-						],
-						"label": "",
-						"prefix": "",
-						"suffix": "",
-						"base": "10",
-						"scale": "linear"
-					},
-					"y": {
-						"bounds": [
-							"",
-							""
-						],
-						"label": "frequency",
-						"prefix": "",
-						"suffix": " MHz",
-						"base": "10",
-						"scale": "linear"
-					},
-					"y2": {
-						"bounds": [
-							"",
-							""
-						],
-						"label": "",
-						"prefix": "",
-						"suffix": "",
-						"base": "10",
-						"scale": "linear"
-					}
-				},
-				"type": "single-stat",
-				"colors": [
-					{
-						"id": "base",
-						"type": "text",
-						"hex": "#00C9FF",
-						"name": "laser",
-						"value": "-1000000000000000000"
-					}
-				],
-				"legend": {},
-				"tableOptions": {
-					"verticalTimeAxis": true,
-					"sortBy": {
-						"internalName": "time",
-						"displayName": "",
-						"visible": true
-					},
-					"wrapping": "truncate",
-					"fixFirstColumn": true
-				},
-				"fieldOptions": [
-					{
-						"internalName": "time",
-						"displayName": "",
-						"visible": true
-					}
-				],
-				"timeFormat": "MM/DD/YYYY HH:mm:ss",
-				"decimalPlaces": {
-					"isEnforced": true,
-					"digits": 0
-				},
-				"note": "",
-				"noteVisibility": "default",
-				"links": {
-					"self": "/chronograf/v1/dashboards/10/cells/be233e6d-71ac-4b84-8348-7a588ab4d9b7"
-				}
-			},
-			{
 				"i": "611cb3bd-183f-4984-bdfe-fe5a67f68912",
 				"x": 8,
 				"y": 4,
@@ -2366,7 +2366,7 @@
 				"name": "ARM & Core Frequency",
 				"queries": [
 					{
-						"query": "SELECT mean(\"arm_freq\") AS \"ARM frequency\", mean(\"core_freq\") AS \"Core frequency\" FROM \"telegraf\"..\"raspberry_pi\" WHERE time > :dashboardTime: AND time < :upperDashboardTime: AND \"host\"=':host:' GROUP BY time(:interval:) FILL(previous)",
+						"query": "SELECT mean(\"arm_freq\") AS \"ARM frequency\", mean(\"v3d_freq\") AS \"Core frequency\" FROM \"telegraf\"..\"raspberry_pi\" WHERE time > :dashboardTime: AND time < :upperDashboardTime: AND \"host\"=':host:' GROUP BY time(:interval:) FILL(previous)",
 						"queryConfig": {
 							"database": "telegraf",
 							"measurement": "raspberry_pi",
@@ -2390,7 +2390,7 @@
 									"alias": "Core frequency",
 									"args": [
 										{
-											"value": "core_freq",
+											"value": "v3d_freq",
 											"type": "field",
 											"alias": ""
 										}
