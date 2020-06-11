@@ -20,8 +20,8 @@ sdram_freq=3200
 
 I also added changed the `gpu_freq` to be `v3d_freq`, and thus, i changed the [rpi-stats.sh](rpi-stats.sh) file to add such functionality. On top of that, I added some default calls to telegraf.conf, just so I could get some more statistics about the host, and most importantly, about the usage of each core.
 
-The [Raspberry_Pi_OC_Health.json](Raspberry_Pi_OC_Health.json) dashboard looks like this:
-![example-mod](example-mod.png)
+The [Raspberry_Pi_OC_Health.json](Raspberry_Pi_OC_Health.json) dashboard has been changed slightly, it now looks like this:
+![example](example.png)
 
 ## Back to the original README:
 
