@@ -3,7 +3,7 @@
 A script to collect various Raspberry Pi statistics, which are sent via Telegraf to InfluxDB.
 
 ## Notes about my modifications:
-Most of the files have been modified, and the OC settings in config.txt are:
+Most of the files have been modified, and the OC settings in config.txt (in the Raspberry Pi) are:
 ```python
 # Overclocking:
 over_voltage=6
