@@ -3,16 +3,16 @@
 		"chronografVersion": "1.8.4",
 		"sources": {
 			"1": {
-				"name": "Pi-Health",
+				"name": "Influx - DockerPi",
 				"link": "/chronograf/v1/sources/1"
 			}
 		}
 	},
 	"dashboard": {
-		"id": "10",
+		"id": "2",
 		"cells": [
 			{
-				"i": "ac528683-9261-4e10-bc37-074ba5ad10b1",
+				"i": "5d9ee7dc-c3ea-454f-a26e-600428436495",
 				"x": 2,
 				"y": 0,
 				"w": 1,
@@ -111,11 +111,11 @@
 				"note": "",
 				"noteVisibility": "default",
 				"links": {
-					"self": "/chronograf/v1/dashboards/10/cells/ac528683-9261-4e10-bc37-074ba5ad10b1"
+					"self": "/chronograf/v1/dashboards/2/cells/5d9ee7dc-c3ea-454f-a26e-600428436495"
 				}
 			},
 			{
-				"i": "063ddda4-0e10-4425-914f-5f419093acc8",
+				"i": "f4400728-d0c4-44d6-9736-eb14ebe216e0",
 				"x": 0,
 				"y": 0,
 				"w": 2,
@@ -214,11 +214,11 @@
 				"note": "",
 				"noteVisibility": "default",
 				"links": {
-					"self": "/chronograf/v1/dashboards/10/cells/063ddda4-0e10-4425-914f-5f419093acc8"
+					"self": "/chronograf/v1/dashboards/2/cells/f4400728-d0c4-44d6-9736-eb14ebe216e0"
 				}
 			},
 			{
-				"i": "de107405-6bcd-4cdf-80b7-db7bd668ffd2",
+				"i": "a21eaec3-2742-4c14-b6a0-e37bdcc92c56",
 				"x": 6,
 				"y": 4,
 				"w": 2,
@@ -226,7 +226,7 @@
 				"name": "CPU4  Usage",
 				"queries": [
 					{
-						"query": "SELECT mean(\"usage_system\") AS \"mean_usage_system\" FROM \"telegraf\".\"autogen\".\"cpu\" WHERE time > now() - 1h AND \"cpu\"='cpu3' GROUP BY time(:interval:) FILL(previous)",
+						"query": "SELECT mean(\"usage_user\") AS \"mean_usage_user\" FROM \"telegraf\".\"autogen\".\"cpu\" WHERE time > now() - 1h AND \"cpu\"='cpu3' GROUP BY time(:interval:) FILL(previous)",
 						"queryConfig": {
 							"database": "telegraf",
 							"measurement": "cpu",
@@ -235,10 +235,10 @@
 								{
 									"value": "mean",
 									"type": "func",
-									"alias": "mean_usage_system",
+									"alias": "mean_usage_user",
 									"args": [
 										{
-											"value": "usage_system",
+											"value": "usage_user",
 											"type": "field",
 											"alias": ""
 										}
@@ -373,11 +373,11 @@
 				"note": "",
 				"noteVisibility": "default",
 				"links": {
-					"self": "/chronograf/v1/dashboards/10/cells/de107405-6bcd-4cdf-80b7-db7bd668ffd2"
+					"self": "/chronograf/v1/dashboards/2/cells/a21eaec3-2742-4c14-b6a0-e37bdcc92c56"
 				}
 			},
 			{
-				"i": "8a258c02-488d-48b3-9106-f40214f005fd",
+				"i": "d8abb80d-e271-4b1d-9d2b-7ef2ca9ee39a",
 				"x": 4,
 				"y": 4,
 				"w": 2,
@@ -385,7 +385,7 @@
 				"name": "CPU3 Usage",
 				"queries": [
 					{
-						"query": "SELECT mean(\"usage_system\") AS \"mean_usage_system\" FROM \"telegraf\".\"autogen\".\"cpu\" WHERE time > now() - 1h AND \"cpu\"='cpu2' GROUP BY time(:interval:) FILL(previous)",
+						"query": "SELECT mean(\"usage_user\") AS \"mean_usage_user\" FROM \"telegraf\".\"autogen\".\"cpu\" WHERE time > now() - 1h AND \"cpu\"='cpu2' GROUP BY time(:interval:) FILL(previous)",
 						"queryConfig": {
 							"database": "telegraf",
 							"measurement": "cpu",
@@ -394,10 +394,10 @@
 								{
 									"value": "mean",
 									"type": "func",
-									"alias": "mean_usage_system",
+									"alias": "mean_usage_user",
 									"args": [
 										{
-											"value": "usage_system",
+											"value": "usage_user",
 											"type": "field",
 											"alias": ""
 										}
@@ -532,11 +532,11 @@
 				"note": "",
 				"noteVisibility": "default",
 				"links": {
-					"self": "/chronograf/v1/dashboards/10/cells/8a258c02-488d-48b3-9106-f40214f005fd"
+					"self": "/chronograf/v1/dashboards/2/cells/d8abb80d-e271-4b1d-9d2b-7ef2ca9ee39a"
 				}
 			},
 			{
-				"i": "867e4563-680e-4f76-835b-5e8dc4b0996e",
+				"i": "ced74e90-88e9-474c-9269-9e0aa65f4240",
 				"x": 2,
 				"y": 4,
 				"w": 2,
@@ -544,7 +544,7 @@
 				"name": "CPU2  Usage",
 				"queries": [
 					{
-						"query": "SELECT mean(\"usage_system\") AS \"mean_usage_system\" FROM \"telegraf\".\"autogen\".\"cpu\" WHERE time > now() - 1h AND \"cpu\"='cpu1' GROUP BY time(:interval:) FILL(previous)",
+						"query": "SELECT mean(\"usage_user\") AS \"mean_usage_user\" FROM \"telegraf\".\"autogen\".\"cpu\" WHERE time > now() - 1h AND \"cpu\"='cpu1' GROUP BY time(:interval:) FILL(previous)",
 						"queryConfig": {
 							"database": "telegraf",
 							"measurement": "cpu",
@@ -553,10 +553,10 @@
 								{
 									"value": "mean",
 									"type": "func",
-									"alias": "mean_usage_system",
+									"alias": "mean_usage_user",
 									"args": [
 										{
-											"value": "usage_system",
+											"value": "usage_user",
 											"type": "field",
 											"alias": ""
 										}
@@ -691,11 +691,11 @@
 				"note": "",
 				"noteVisibility": "default",
 				"links": {
-					"self": "/chronograf/v1/dashboards/10/cells/867e4563-680e-4f76-835b-5e8dc4b0996e"
+					"self": "/chronograf/v1/dashboards/2/cells/ced74e90-88e9-474c-9269-9e0aa65f4240"
 				}
 			},
 			{
-				"i": "e71572be-c2f8-461f-bdfd-9927b55fad85",
+				"i": "0e18704d-2292-415f-8fd3-0177986267f9",
 				"x": 8,
 				"y": 7,
 				"w": 4,
@@ -808,11 +808,11 @@
 				"note": "",
 				"noteVisibility": "default",
 				"links": {
-					"self": "/chronograf/v1/dashboards/10/cells/e71572be-c2f8-461f-bdfd-9927b55fad85"
+					"self": "/chronograf/v1/dashboards/2/cells/0e18704d-2292-415f-8fd3-0177986267f9"
 				}
 			},
 			{
-				"i": "258af288-cbf9-428b-9f3a-b9ded473283f",
+				"i": "0a9a3de2-3282-4187-9ba3-948ae4c35c90",
 				"x": 10,
 				"y": 1,
 				"w": 2,
@@ -956,11 +956,11 @@
 				"note": "",
 				"noteVisibility": "default",
 				"links": {
-					"self": "/chronograf/v1/dashboards/10/cells/258af288-cbf9-428b-9f3a-b9ded473283f"
+					"self": "/chronograf/v1/dashboards/2/cells/0a9a3de2-3282-4187-9ba3-948ae4c35c90"
 				}
 			},
 			{
-				"i": "23fcb3c0-ce94-4bf3-a006-3c477925bbfb",
+				"i": "727ba1a6-95e3-4c78-817c-8a8e4314b0c4",
 				"x": 0,
 				"y": 4,
 				"w": 2,
@@ -968,7 +968,7 @@
 				"name": "CPU1 Usage",
 				"queries": [
 					{
-						"query": "SELECT mean(\"usage_steal\") AS \"mean_usage_steal\" FROM \"telegraf\".\"autogen\".\"cpu\" WHERE time > now() - 1h AND \"cpu\"='cpu0' GROUP BY time(:interval:) FILL(previous)",
+						"query": "SELECT mean(\"usage_user\") AS \"mean_usage_user\" FROM \"telegraf\".\"autogen\".\"cpu\" WHERE time > now() - 1h AND \"cpu\"='cpu0' GROUP BY time(:interval:) FILL(previous)",
 						"queryConfig": {
 							"database": "telegraf",
 							"measurement": "cpu",
@@ -977,10 +977,10 @@
 								{
 									"value": "mean",
 									"type": "func",
-									"alias": "mean_usage_steal",
+									"alias": "mean_usage_user",
 									"args": [
 										{
-											"value": "usage_steal",
+											"value": "usage_user",
 											"type": "field",
 											"alias": ""
 										}
@@ -1115,11 +1115,11 @@
 				"note": "",
 				"noteVisibility": "default",
 				"links": {
-					"self": "/chronograf/v1/dashboards/10/cells/23fcb3c0-ce94-4bf3-a006-3c477925bbfb"
+					"self": "/chronograf/v1/dashboards/2/cells/727ba1a6-95e3-4c78-817c-8a8e4314b0c4"
 				}
 			},
 			{
-				"i": "c743408e-3012-4036-902f-450927558105",
+				"i": "39b32e8f-b4d5-43c0-b51c-ff16da3cbd73",
 				"x": 8,
 				"y": 1,
 				"w": 2,
@@ -1263,11 +1263,11 @@
 				"note": "",
 				"noteVisibility": "default",
 				"links": {
-					"self": "/chronograf/v1/dashboards/10/cells/c743408e-3012-4036-902f-450927558105"
+					"self": "/chronograf/v1/dashboards/2/cells/39b32e8f-b4d5-43c0-b51c-ff16da3cbd73"
 				}
 			},
 			{
-				"i": "b91c1b2e-1f03-4847-bc90-7da99fccbf9f",
+				"i": "b97f3961-7fe8-49be-828d-93ae24d10444",
 				"x": 6,
 				"y": 1,
 				"w": 2,
@@ -1411,11 +1411,11 @@
 				"note": "",
 				"noteVisibility": "default",
 				"links": {
-					"self": "/chronograf/v1/dashboards/10/cells/b91c1b2e-1f03-4847-bc90-7da99fccbf9f"
+					"self": "/chronograf/v1/dashboards/2/cells/b97f3961-7fe8-49be-828d-93ae24d10444"
 				}
 			},
 			{
-				"i": "3206a282-cbc0-4810-b63f-6127e77dc52f",
+				"i": "fd28e7dd-76c2-4d34-b265-89c8d543473e",
 				"x": 2,
 				"y": 1,
 				"w": 2,
@@ -1535,11 +1535,11 @@
 				"note": "",
 				"noteVisibility": "default",
 				"links": {
-					"self": "/chronograf/v1/dashboards/10/cells/3206a282-cbc0-4810-b63f-6127e77dc52f"
+					"self": "/chronograf/v1/dashboards/2/cells/fd28e7dd-76c2-4d34-b265-89c8d543473e"
 				}
 			},
 			{
-				"i": "8b931c3e-35a6-4257-bd2a-a8e075d0ad68",
+				"i": "e394a603-2cd9-4c4a-bc9e-85a5377ecc26",
 				"x": 0,
 				"y": 1,
 				"w": 2,
@@ -1659,11 +1659,11 @@
 				"note": "",
 				"noteVisibility": "default",
 				"links": {
-					"self": "/chronograf/v1/dashboards/10/cells/8b931c3e-35a6-4257-bd2a-a8e075d0ad68"
+					"self": "/chronograf/v1/dashboards/2/cells/e394a603-2cd9-4c4a-bc9e-85a5377ecc26"
 				}
 			},
 			{
-				"i": "9db54d1d-1ef4-4a2c-9bba-75eb7df5271f",
+				"i": "7240bdac-5b47-4a5c-9d74-47bab0825ec3",
 				"x": 10,
 				"y": 0,
 				"w": 2,
@@ -1762,11 +1762,11 @@
 				"note": "",
 				"noteVisibility": "default",
 				"links": {
-					"self": "/chronograf/v1/dashboards/10/cells/9db54d1d-1ef4-4a2c-9bba-75eb7df5271f"
+					"self": "/chronograf/v1/dashboards/2/cells/7240bdac-5b47-4a5c-9d74-47bab0825ec3"
 				}
 			},
 			{
-				"i": "7fca95e4-61bd-464c-a996-934a6a1586cd",
+				"i": "87bc750a-9af9-4a85-a3f2-5f624553f173",
 				"x": 8,
 				"y": 0,
 				"w": 2,
@@ -1865,11 +1865,11 @@
 				"note": "",
 				"noteVisibility": "default",
 				"links": {
-					"self": "/chronograf/v1/dashboards/10/cells/7fca95e4-61bd-464c-a996-934a6a1586cd"
+					"self": "/chronograf/v1/dashboards/2/cells/87bc750a-9af9-4a85-a3f2-5f624553f173"
 				}
 			},
 			{
-				"i": "00ee2e44-cea1-4d3f-91a3-d084f9a4f0db",
+				"i": "73ce2aee-32a9-488b-8d98-ecf0d484962a",
 				"x": 6,
 				"y": 0,
 				"w": 2,
@@ -1968,11 +1968,11 @@
 				"note": "",
 				"noteVisibility": "default",
 				"links": {
-					"self": "/chronograf/v1/dashboards/10/cells/00ee2e44-cea1-4d3f-91a3-d084f9a4f0db"
+					"self": "/chronograf/v1/dashboards/2/cells/73ce2aee-32a9-488b-8d98-ecf0d484962a"
 				}
 			},
 			{
-				"i": "e4fbb33c-d2b0-4713-ab15-7625983a0c9f",
+				"i": "e1dae00d-2654-4396-af77-327058054604",
 				"x": 3,
 				"y": 0,
 				"w": 1,
@@ -2071,11 +2071,11 @@
 				"note": "",
 				"noteVisibility": "default",
 				"links": {
-					"self": "/chronograf/v1/dashboards/10/cells/e4fbb33c-d2b0-4713-ab15-7625983a0c9f"
+					"self": "/chronograf/v1/dashboards/2/cells/e1dae00d-2654-4396-af77-327058054604"
 				}
 			},
 			{
-				"i": "32db42f7-04a9-4e3b-8a21-fe3ab3f670fb",
+				"i": "fbb5dc1c-9a19-417f-84c7-e6e8b41ca39c",
 				"x": 4,
 				"y": 0,
 				"w": 2,
@@ -2174,11 +2174,11 @@
 				"note": "",
 				"noteVisibility": "default",
 				"links": {
-					"self": "/chronograf/v1/dashboards/10/cells/32db42f7-04a9-4e3b-8a21-fe3ab3f670fb"
+					"self": "/chronograf/v1/dashboards/2/cells/fbb5dc1c-9a19-417f-84c7-e6e8b41ca39c"
 				}
 			},
 			{
-				"i": "611cb3bd-183f-4984-bdfe-fe5a67f68912",
+				"i": "b5a166df-293b-4425-bb4e-1f8ef747a47b",
 				"x": 8,
 				"y": 4,
 				"w": 4,
@@ -2304,16 +2304,16 @@
 				"timeFormat": "MM/DD/YYYY HH:mm:ss",
 				"decimalPlaces": {
 					"isEnforced": true,
-					"digits": 2
+					"digits": 0
 				},
 				"note": "",
 				"noteVisibility": "default",
 				"links": {
-					"self": "/chronograf/v1/dashboards/10/cells/611cb3bd-183f-4984-bdfe-fe5a67f68912"
+					"self": "/chronograf/v1/dashboards/2/cells/b5a166df-293b-4425-bb4e-1f8ef747a47b"
 				}
 			},
 			{
-				"i": "0a87eba2-09c7-4b6b-b435-ab812bd0fef6",
+				"i": "8003a12d-2b83-4aed-945c-0c0c21d39678",
 				"x": 4,
 				"y": 1,
 				"w": 2,
@@ -2457,14 +2457,14 @@
 				"note": "",
 				"noteVisibility": "default",
 				"links": {
-					"self": "/chronograf/v1/dashboards/10/cells/0a87eba2-09c7-4b6b-b435-ab812bd0fef6"
+					"self": "/chronograf/v1/dashboards/2/cells/8003a12d-2b83-4aed-945c-0c0c21d39678"
 				}
 			},
 			{
-				"i": "efb728b3-3460-498f-bfc7-eac57dbee82c",
+				"i": "f832d6a2-1587-4ad9-ba59-5bd2c2ef8258",
 				"x": 0,
 				"y": 7,
-				"w": 8,
+				"w": 4,
 				"h": 2,
 				"name": "ARM & Core Frequency",
 				"queries": [
@@ -2604,7 +2604,124 @@
 				"note": "",
 				"noteVisibility": "default",
 				"links": {
-					"self": "/chronograf/v1/dashboards/10/cells/efb728b3-3460-498f-bfc7-eac57dbee82c"
+					"self": "/chronograf/v1/dashboards/2/cells/f832d6a2-1587-4ad9-ba59-5bd2c2ef8258"
+				}
+			},
+			{
+				"i": "2b869ccc-e5c8-4946-b437-789b8e8a708a",
+				"x": 4,
+				"y": 7,
+				"w": 4,
+				"h": 2,
+				"name": "CPU Usage",
+				"queries": [
+					{
+						"query": "SELECT (100 - mean(\"usage_idle\")) AS \"mean_usage_idle\" FROM \"telegraf\".\"autogen\".\"cpu\" WHERE time > now() - 1h AND \"cpu\"='cpu-total' GROUP BY time(:interval:) FILL(previous)",
+						"queryConfig": {
+							"database": "",
+							"measurement": "",
+							"retentionPolicy": "",
+							"fields": [],
+							"tags": {},
+							"groupBy": {
+								"time": "",
+								"tags": []
+							},
+							"areTagsAccepted": false,
+							"rawText": "SELECT (100 - mean(\"usage_idle\")) AS \"mean_usage_idle\" FROM \"telegraf\".\"autogen\".\"cpu\" WHERE time > now() - 1h AND \"cpu\"='cpu-total' GROUP BY time(:interval:) FILL(previous)",
+							"range": null,
+							"shifts": null
+						},
+						"source": "",
+						"type": "influxql"
+					}
+				],
+				"axes": {
+					"x": {
+						"bounds": [
+							"",
+							""
+						],
+						"label": "",
+						"prefix": "",
+						"suffix": "",
+						"base": "10",
+						"scale": "linear"
+					},
+					"y": {
+						"bounds": [
+							"",
+							""
+						],
+						"label": "CPU Usage",
+						"prefix": "",
+						"suffix": "%",
+						"base": "2",
+						"scale": "linear"
+					},
+					"y2": {
+						"bounds": [
+							"",
+							""
+						],
+						"label": "",
+						"prefix": "",
+						"suffix": "",
+						"base": "10",
+						"scale": "linear"
+					}
+				},
+				"type": "line",
+				"colors": [
+					{
+						"id": "638276d6-0423-4ca0-8425-19923774ec19",
+						"type": "scale",
+						"hex": "#31C0F6",
+						"name": "Nineteen Eighty Four",
+						"value": "0"
+					},
+					{
+						"id": "6484de4f-7486-454b-a1cd-14ec92229752",
+						"type": "scale",
+						"hex": "#A500A5",
+						"name": "Nineteen Eighty Four",
+						"value": "0"
+					},
+					{
+						"id": "48caf1eb-cfcc-4a2c-ac41-302c177f5f3c",
+						"type": "scale",
+						"hex": "#FF7E27",
+						"name": "Nineteen Eighty Four",
+						"value": "0"
+					}
+				],
+				"legend": {},
+				"tableOptions": {
+					"verticalTimeAxis": true,
+					"sortBy": {
+						"internalName": "time",
+						"displayName": "",
+						"visible": true
+					},
+					"wrapping": "truncate",
+					"fixFirstColumn": true
+				},
+				"fieldOptions": [
+					{
+						"internalName": "time",
+						"displayName": "",
+						"visible": true
+					}
+				],
+				"timeFormat": "MM/DD/YYYY HH:mm:ss",
+				"decimalPlaces": {
+					"isEnforced": true,
+					"digits": 2
+				},
+				"note": "",
+				"noteVisibility": "default",
+				"links": {
+					"self": "/chronograf/v1/dashboards/2/cells/2b869ccc-e5c8-4946-b437-789b8e8a708a"
 				}
 			}
 		],
@@ -2629,16 +2746,16 @@
 				},
 				"sourceID": "dynamic",
 				"links": {
-					"self": "/chronograf/v1/dashboards/10/templates/683079fe-0c4f-4eed-a602-3f93387e922e"
+					"self": "/chronograf/v1/dashboards/2/templates/683079fe-0c4f-4eed-a602-3f93387e922e"
 				}
 			}
 		],
 		"name": "Docker Pi: Health",
 		"organization": "default",
 		"links": {
-			"self": "/chronograf/v1/dashboards/10",
-			"cells": "/chronograf/v1/dashboards/10/cells",
-			"templates": "/chronograf/v1/dashboards/10/templates"
+			"self": "/chronograf/v1/dashboards/2",
+			"cells": "/chronograf/v1/dashboards/2/cells",
+			"templates": "/chronograf/v1/dashboards/2/templates"
 		}
 	}
 }
