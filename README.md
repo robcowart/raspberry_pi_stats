@@ -44,6 +44,7 @@ core_freq | clock frequency of the SOC
 config_arm_freq | configured clock frequency of the ARM processor
 config_core_freq | configured clock frequency of the SOC
 config_gpu_freq | configured clock frequency of the GPU
+config_v3d_F | configured clock frequency of the V3D
 config_sdram_freq | configured clock frequency of the SDRAM
 core_volts | voltage provided to the SOC
 dpi_freq | clock frequency of the DPI
@@ -65,7 +66,7 @@ reloc_mem | free GPU memory in the relocatable heap
 reloc_total_mem | total memory assigned to the GPU relocatable heap
 sdram_c_volts | voltage provided to SOC SDRAM
 sdram_i_volts | voltage provided to I/O SDRAM
-sdram_p_volts | voltage provided to Physical SDRAM 
+sdram_p_volts | voltage provided to Physical SDRAM
 soc_temp | temperature of the SOC
 uart_freq | clock frequency of the UART
 v3d_freq | clock frequency of the V3D
